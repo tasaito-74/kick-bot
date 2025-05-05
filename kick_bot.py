@@ -7,8 +7,8 @@ warned = False
 kick_schedule = {}  # key: user_id, value: {"hour": int, "minute": int, "warned": bool}
 
 TOKEN = "TOKEN"  # Botのトークン"
-GUILD_ID = 任意のID          # 例: 1234567890123456789
-CHANNEL_ID = 任意のID     # 発言するチャンネルのID
+GUILD_ID = #任意のID          # 例: 1234567890123456789
+CHANNEL_ID = #任意のID     # 発言するチャンネルのID
 
 intents = discord.Intents.default()
 intents.voice_states = True
