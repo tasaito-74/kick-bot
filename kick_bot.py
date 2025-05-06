@@ -77,6 +77,13 @@ async def on_message(message):
         else:
             await message.channel.send("📋 現在、Kick Out予定は登録されていません。")
 
+    elif message.content.strip() == "!delete":
+        deleted = await message.channel.purge(
+            limit=100,
+            check=lambda m: m.author == client.user or m.author == message.author
+        )
+        await message.channel.send(f"🧹 過去のBotおよびあなたのメッセージを{len(deleted)}件削除しました。", delete_after=5)
+
     elif message.content.startswith("cancel") and message.mentions:
         for user in message.mentions:
             if user.id in kick_schedule:
