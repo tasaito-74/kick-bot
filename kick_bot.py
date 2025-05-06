@@ -2,13 +2,17 @@ import discord
 from discord.ext import commands, tasks
 import datetime
 import asyncio
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 warned = False
 kick_schedule = {}  # key: user_id, value: {"hour": int, "minute": int, "warned": bool}
 
-TOKEN = "TOKEN"  # Botのトークン"
-GUILD_ID = #任意のID          # 例: 1234567890123456789
-CHANNEL_ID = #任意のID     # 発言するチャンネルのID
+TOKEN = os.getenv("TOKEN")
+GUILD_ID = int(os.getenv("GUILD_ID"))
+CHANNEL_ID = int(os.getenv("CHANNEL_ID"))
 
 intents = discord.Intents.default()
 intents.voice_states = True
